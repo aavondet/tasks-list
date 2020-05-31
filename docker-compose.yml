@@ -15,3 +15,11 @@ services:
             - '27017-27019:27017-27019'
         volumes: 
             - ./mongo/db-data:/data/db
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports: 
+            - '3001:3001'
+        restart: on-failure
+        container_name: backend
