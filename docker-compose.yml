@@ -6,5 +6,12 @@ services:
         ports:
             - '6379:6379'
         volumes: 
-            - ./redis/db-data:/data
+            - ./redis/cache-data:/data
         restart: always
+    mongo:
+        image: 'mongo'
+        container_name: 'mongo-db'
+        ports:
+            - '27017-27019:27017-27019'
+        volumes: 
+            - ./mongo/db-data:/data/db
